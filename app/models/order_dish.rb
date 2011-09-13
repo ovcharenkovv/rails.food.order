@@ -3,7 +3,7 @@ class OrderDish < ActiveRecord::Base
   belongs_to :dish
 
   def self.count_order_dishes
-    select("*, COUNT(*) AS cnt").group('dish_id').where('DATE(created_at) = ?', Date.today)
+    select("*, COUNT(*) AS cnt").group('order_dishes.dish_id').where('DATE(order_dishes.created_at) = ?', Date.today)
 
     #find_by_sql("SELECT *, COUNT(*) AS cnt FROM order_dishes  od WHERE DATE(created_at) = '#{Date.today}' GROUP BY dish_id;")
 #    today =Time.now.midnight .. (Time.now.midnight + 1.day)
