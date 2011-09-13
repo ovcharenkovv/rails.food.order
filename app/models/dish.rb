@@ -5,7 +5,6 @@ class Dish < ActiveRecord::Base
   has_many :orders, :through => :order_dishes
 
   validates :name,  :presence => true,
-            :uniqueness => true,
             :length => {:minimum => 3, :maximum => 254}
 
   validates :description,  :presence => true,
