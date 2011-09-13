@@ -1,8 +1,17 @@
 class OrdersController < ApplicationController
+  before_filter :admin_redirect
   # GET /orders
   # GET /orders.xml
+  def admin_redirect
+    if current_user.email=='admin@gmail.com'
+      redirect_to admin_dashboard_path
+    end
+  end
+
   def index
     @orders = current_user.orders
+
+
 
     respond_to do |format|
       format.html # index.html.erb

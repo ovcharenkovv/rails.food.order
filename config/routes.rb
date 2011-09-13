@@ -9,7 +9,7 @@ Food::Application.routes.draw do
     resources :dishes , :categories , :order_dishes ,:orders
   end
 
-  match 'admin' => 'admin/dashboard#index'
+  match 'admin' => 'admin/dashboard#index', :as => :admin_dashboard
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
