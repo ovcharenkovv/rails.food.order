@@ -33,7 +33,7 @@
       %th Total
 
   - @count_order_dishes.each do |cod|
-    %tr
+    %tr{:class=>"color_#{cod.dish.category.id}"}
       %td= cod.dish.category.name
       %td= cod.dish.name
       %td= cod.dish.description

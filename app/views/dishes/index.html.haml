@@ -13,7 +13,7 @@
       %th
 
   - @dishes.each do |dish|
-    %tr
+    %tr{:class=>"color_#{dish.category.id}"}
       %td= dish.name
       %td= dish.description
       %td= dish.price
