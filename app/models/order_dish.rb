@@ -6,7 +6,7 @@ class OrderDish < ActiveRecord::Base
     find(:all,
          :joins => "LEFT JOIN dishes on order_dishes.dish_id = dishes.id" ,
          :select => "dish_id, COUNT(*) AS cnt",
-         :group =>"order_dishes.dish_id",
+         :group =>"dishes.category_id, order_dishes.dish_id",
          :conditions => ["DATE(order_dishes.created_at) = ?", Date.today],
          :order => "dishes.category_id"
     )
