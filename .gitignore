@@ -1,6 +1,5 @@
-.idea/*
+*.sqlite3
 log/*
-.bundle
-db/*
 tmp/*
-
+.idea/*
+.bundle
