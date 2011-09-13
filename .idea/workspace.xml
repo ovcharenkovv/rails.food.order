@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7ae34fff-9a05-4f27-b118-b7c3dc45cb2b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/order_dish.rb" afterPath="$PROJECT_DIR$/app/models/order_dish.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/development.log" afterPath="$PROJECT_DIR$/log/development.log" />
     </list>
     <ignored path="food.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -459,7 +457,7 @@
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="git ignore change&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -476,6 +474,7 @@
     <MESSAGE value="add ignoring files" />
     <MESSAGE value="try to fix exc" />
     <MESSAGE value="git ignore change&#10;" />
+    <MESSAGE value="fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
