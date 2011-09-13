@@ -55,8 +55,8 @@
     <orderEntry type="library" scope="PROVIDED" name="rack-mount (v0.6.14, RVM: ree-1.8.7-2011.03) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tzinfo (v0.3.29, RVM: ree-1.8.7-2011.03) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="builder (v2.1.2, RVM: ree-1.8.7-2011.03) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="bundler (v1.0.18, RVM: ree-1.8.7-2011.03) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="railties (v3.0.3, RVM: ree-1.8.7-2011.03) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="bundler (v1.0.18, RVM: ree-1.8.7-2011.03) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="i18n (v0.6.0, RVM: ree-1.8.7-2011.03) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="treetop (v1.4.10, RVM: ree-1.8.7-2011.03) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="actionpack (v3.0.3, RVM: ree-1.8.7-2011.03) [gem]" level="application" />
@@ -67,11 +67,11 @@
     <orderEntry type="library" scope="PROVIDED" name="activerecord (v3.0.3, RVM: ree-1.8.7-2011.03) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activemodel (v3.0.3, RVM: ree-1.8.7-2011.03) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sqlite3-ruby (v1.3.3, RVM: ree-1.8.7-2011.03) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="haml-rails (v0.3.4, RVM: ree-1.8.7-2011.03) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rack (v1.2.3, RVM: ree-1.8.7-2011.03) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rake (v0.8.7, RVM: ree-1.8.7-2011.03) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rack-test (v0.5.7, RVM: ree-1.8.7-2011.03) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activeresource (v3.0.3, RVM: ree-1.8.7-2011.03) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rack-test (v0.5.7, RVM: ree-1.8.7-2011.03) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rack (v1.2.3, RVM: ree-1.8.7-2011.03) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="haml-rails (v0.3.4, RVM: ree-1.8.7-2011.03) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="abstract (v1.0.0, RVM: ree-1.8.7-2011.03) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="orm_adapter (v0.0.5, RVM: ree-1.8.7-2011.03) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bcrypt-ruby (v2.1.4, RVM: ree-1.8.7-2011.03) [gem]" level="application" />
@@ -80,6 +80,10 @@
     <orderEntry type="library" scope="PROVIDED" name="erubis (v2.6.6, RVM: ree-1.8.7-2011.03) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mime-types (v1.16, RVM: ree-1.8.7-2011.03) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="haml (v3.1.2, RVM: ree-1.8.7-2011.03) [gem]" level="application" />
+  </component>
+  <component name="RModuleSettingsStorage">
+    <LOAD_PATH number="0" />
+    <I18N_FOLDERS number="1" string0="$MODULE_DIR$/config/locales" />
   </component>
 </module>
 

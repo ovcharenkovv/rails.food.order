@@ -28490,3 +28490,195 @@ Rendered devise/shared/_links.html.haml (2.3ms)
 Rendered layouts/_user_nav.html.haml (2.4ms)
 Rendered devise/sessions/new.html.haml within layouts/application (15.3ms)
 Completed 200 OK in 33ms (Views: 18.5ms | ActiveRecord: 0.0ms)
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (124.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36mSQL (92.4ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+Migrating to CreateOrders (20110908195732)
+  [1m[36mSQL (1.5ms)[0m  [1mCREATE TABLE "orders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110908195732')
+Migrating to CreateOrderDishes (20110908200037)
+  [1m[36mSQL (1.3ms)[0m  [1mCREATE TABLE "order_dishes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "dish_id" integer, "order_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110908200037')
+Migrating to CreateCategories (20110909060902)
+  [1m[36mSQL (1.4ms)[0m  [1mCREATE TABLE "categories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110909060902')
+Migrating to CreateDishes (20110909061905)
+  [1m[36mSQL (1.4ms)[0m  [1mCREATE TABLE "dishes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "description" text, "price" decimal, "weight" varchar(255), "week_day" integer, "category_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110909061905')
+Migrating to DeviseCreateUsers (20110909063451)
+  [1m[36mSQL (1.7ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(128) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_users_on_email')[0m
+  [1m[35mSQL (0.2ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20110909063451')[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("categories")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("dishes")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("order_dishes")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("orders")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_info('index_users_on_reset_password_token')
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_users_on_email')[0m
+
+
+Started GET "/" for 127.0.0.1 at Tue Sep 13 09:52:01 +0300 2011
+  Processing by OrdersController#index as HTML
+Completed   in 0ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at Tue Sep 13 09:52:01 +0300 2011
+  Processing by Devise::SessionsController#new as HTML
+Rendered devise/shared/_links.html.haml (2.4ms)
+Rendered layouts/_user_nav.html.haml (2.4ms)
+Rendered devise/sessions/new.html.haml within layouts/application (15.3ms)
+Completed 200 OK in 73ms (Views: 18.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at Tue Sep 13 09:52:13 +0300 2011
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"commit"=>"Sign in", "authenticity_token"=>"gBTlHtFo/1sCBcN1m1ad7ON0GQmA9upGnDIXBo6bh38=", "utf8"=>"✓", "user"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "email"=>"admin@gmail.com"}}
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."email" = 'admin@gmail.com') LIMIT 1
+Completed   in 26ms
+  Processing by Devise::SessionsController#new as HTML
+  Parameters: {"commit"=>"Sign in", "authenticity_token"=>"gBTlHtFo/1sCBcN1m1ad7ON0GQmA9upGnDIXBo6bh38=", "utf8"=>"✓", "user"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "email"=>"admin@gmail.com"}}
+Rendered devise/shared/_links.html.haml (2.9ms)
+Rendered layouts/_user_nav.html.haml (2.6ms)
+Rendered devise/sessions/new.html.haml within layouts/application (16.6ms)
+Completed 200 OK in 83ms (Views: 20.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at Tue Sep 13 09:52:16 +0300 2011
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered devise/shared/_links.html.haml (2.3ms)
+Rendered layouts/_user_nav.html.haml (2.4ms)
+Rendered devise/registrations/new.html.haml within layouts/application (19.2ms)
+Completed 200 OK in 32ms (Views: 22.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at Tue Sep 13 09:52:29 +0300 2011
+  Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"commit"=>"Sign up", "authenticity_token"=>"gBTlHtFo/1sCBcN1m1ad7ON0GQmA9upGnDIXBo6bh38=", "utf8"=>"✓", "user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "email"=>"admin@gmail.com"}}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."email" = 'admin@gmail.com') LIMIT 1[0m
+  [1m[35mAREL (0.6ms)[0m  INSERT INTO "users" ("reset_password_token", "last_sign_in_ip", "created_at", "remember_created_at", "current_sign_in_at", "current_sign_in_ip", "last_sign_in_at", "updated_at", "encrypted_password", "email", "sign_in_count", "reset_password_sent_at") VALUES (NULL, NULL, '2011-09-13 06:52:29.132802', NULL, NULL, NULL, NULL, '2011-09-13 06:52:29.132802', '$2a$10$KcfnXWxrb5ua2PE1GZ9z5uZMFs7vfnWREQH1e7Cu/e5tDJkO4lram', 'admin@gmail.com', 0, NULL)
+  [1m[36mAREL (1.1ms)[0m  [1mUPDATE "users" SET "last_sign_in_ip" = '127.0.0.1', "current_sign_in_at" = '2011-09-13 06:52:29.228061', "current_sign_in_ip" = '127.0.0.1', "last_sign_in_at" = '2011-09-13 06:52:29.228061', "updated_at" = '2011-09-13 06:52:29.229049', "sign_in_count" = 1 WHERE ("users"."id" = 1)[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 276ms
+
+
+Started GET "/" for 127.0.0.1 at Tue Sep 13 09:52:29 +0300 2011
+  Processing by OrdersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mOrder Load (0.2ms)[0m  [1mSELECT "orders".* FROM "orders" WHERE ("orders".user_id = 1)[0m
+Rendered layouts/_user_nav.html.haml (2.0ms)
+Rendered orders/index.html.haml within layouts/application (10.8ms)
+Completed 200 OK in 88ms (Views: 13.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin" for 127.0.0.1 at Tue Sep 13 09:52:32 +0300 2011
+  Processing by Admin::DashboardController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mOrderDish Load (0.2ms)[0m  [1mSELECT *, COUNT(*) AS cnt FROM order_dishes od WHERE DATE(created_at) = "2011-09-13" GROUP BY dish_id;[0m
+  [1m[35mOrder Load (0.2ms)[0m  SELECT "orders".* FROM "orders" WHERE (DATE(created_at) = '2011-09-13')
+Rendered admin/dashboard/_menu.html.haml (2.6ms)
+Rendered admin/dashboard/index.html.haml within layouts/admin (13.6ms)
+Completed 200 OK in 44ms (Views: 16.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/admin" for 127.0.0.1 at Tue Sep 13 09:52:35 +0300 2011
+  Processing by Admin::DashboardController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mOrderDish Load (0.2ms)[0m  SELECT *, COUNT(*) AS cnt FROM order_dishes od WHERE DATE(created_at) = "2011-09-13" GROUP BY dish_id;
+  [1m[36mOrder Load (0.2ms)[0m  [1mSELECT "orders".* FROM "orders" WHERE (DATE(created_at) = '2011-09-13')[0m
+Rendered admin/dashboard/_menu.html.haml (2.3ms)
+Rendered admin/dashboard/index.html.haml within layouts/admin (13.4ms)
+Completed 200 OK in 43ms (Views: 16.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/admin" for 127.0.0.1 at Tue Sep 13 09:52:36 +0300 2011
+  Processing by Admin::DashboardController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mOrderDish Load (0.2ms)[0m  [1mSELECT *, COUNT(*) AS cnt FROM order_dishes od WHERE DATE(created_at) = "2011-09-13" GROUP BY dish_id;[0m
+  [1m[35mOrder Load (0.2ms)[0m  SELECT "orders".* FROM "orders" WHERE (DATE(created_at) = '2011-09-13')
+Rendered admin/dashboard/_menu.html.haml (2.5ms)
+Rendered admin/dashboard/index.html.haml within layouts/admin (14.0ms)
+Completed 200 OK in 94ms (Views: 16.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/admin" for 127.0.0.1 at Tue Sep 13 09:52:37 +0300 2011
+  Processing by Admin::DashboardController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mOrderDish Load (0.2ms)[0m  SELECT *, COUNT(*) AS cnt FROM order_dishes od WHERE DATE(created_at) = "2011-09-13" GROUP BY dish_id;
+  [1m[36mOrder Load (0.2ms)[0m  [1mSELECT "orders".* FROM "orders" WHERE (DATE(created_at) = '2011-09-13')[0m
+Rendered admin/dashboard/_menu.html.haml (2.4ms)
+Rendered admin/dashboard/index.html.haml within layouts/admin (13.9ms)
+Completed 200 OK in 44ms (Views: 16.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/admin/categories" for 127.0.0.1 at Tue Sep 13 09:52:39 +0300 2011
+  Processing by Admin::CategoriesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+Rendered admin/dashboard/_menu.html.haml (2.5ms)
+Rendered admin/categories/index.html.haml within layouts/admin (10.5ms)
+Completed 200 OK in 33ms (Views: 13.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/categories" for 127.0.0.1 at Tue Sep 13 09:53:21 +0300 2011
+  Processing by Admin::CategoriesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+Rendered admin/dashboard/_menu.html.haml (2.6ms)
+Rendered admin/categories/index.html.haml within layouts/admin (10.4ms)
+Completed 200 OK in 32ms (Views: 13.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admin/categories" for 127.0.0.1 at Tue Sep 13 09:53:25 +0300 2011
+  Processing by Admin::CategoriesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+Rendered admin/dashboard/_menu.html.haml (2.4ms)
+Rendered admin/categories/index.html.haml within layouts/admin (10.2ms)
+Completed 200 OK in 32ms (Views: 12.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admin/categories" for 127.0.0.1 at Tue Sep 13 09:53:25 +0300 2011
+  Processing by Admin::CategoriesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+Rendered admin/dashboard/_menu.html.haml (2.4ms)
+Rendered admin/categories/index.html.haml within layouts/admin (10.2ms)
+Completed 200 OK in 32ms (Views: 13.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/categories" for 127.0.0.1 at Tue Sep 13 09:55:16 +0300 2011
+  Processing by Admin::CategoriesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+Rendered admin/dashboard/_menu.html.haml (2.4ms)
+Rendered admin/categories/index.html.haml within layouts/admin (10.1ms)
+Completed 200 OK in 32ms (Views: 12.8ms | ActiveRecord: 0.4ms)
