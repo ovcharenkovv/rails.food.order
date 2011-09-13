@@ -8,7 +8,13 @@ gem 'devise'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3-ruby', :require => 'sqlite3'
+group :production do
+  gem 'sqlite3'
+end
+group :development, :test do
+  gem 'sqlite3'
+end
+#gem 'sqlite3-ruby', :require => 'sqlite3'
 
 # Use unicorn as the web server
 # gem 'unicorn'
