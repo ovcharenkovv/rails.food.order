@@ -1,0 +1,46 @@
+%h1 Today orders
+%table
+  %thead
+    %tr
+      %th id
+      %th user
+      %th data
+      %th dishes
+
+  - @orders.each do |order|
+    %tr
+      %td= order.id
+      %td= order.user.email
+      %td= order.created_at
+      %td.aright
+        - order.dishes.each do |dish|
+          =dish.name+"(#{dish.price}) "
+        %span.green="sum: #{order.dishes.sum('price')} Грн."
+
+%h1 Report
+
+%table
+  %thead
+    %tr
+      %th Category
+      %th Name
+      %th Description
+      %th Сount
+      %th Price
+      %th Total
+
+  - @count_order_dishes.each do |cod|
+    %tr
+      %td= cod.dish.category.name
+      %td= cod.dish.name
+      %td= cod.dish.description
+      %td= cod.cnt
+      %td= cod.dish.price
+      %td.aright="#{cod.dish.price*cod.cnt} Грн."
+  %tr
+    %td
+    %td
+    %td
+    %td
+    %td
+    %td.green="SUM: #{@grand_total} ГРН."

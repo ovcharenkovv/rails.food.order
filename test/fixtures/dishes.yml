@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  description: MyText
+  price: 9.99
+  weight: MyString
+  week_day: MyString
+  category_id: 1
+
+two:
+  name: MyString
+  description: MyText
+  price: 9.99
+  weight: MyString
+  week_day: MyString
+  category_id: 1

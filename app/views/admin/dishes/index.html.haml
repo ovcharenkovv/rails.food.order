@@ -1,0 +1,28 @@
+%h1 Listing dishes
+
+%table
+  %thead
+    %tr
+      %th Category
+      %th Name
+      %th Description
+      %th Price
+      %th Weight
+      %th Week day
+      %th
+      %th
+
+  - @dishes.each do |dish|
+    %tr
+      %td= dish.category.name
+      %td= dish.name
+      %td= dish.description
+      %td= dish.price
+      %td= dish.weight
+      %td= dish.week_day
+      %td= link_to 'Edit', edit_admin_dish_path(dish)
+      %td= link_to 'Destroy', admin_dish_path(dish), :confirm => 'Are you sure?', :method => :delete, :class=>'red'
+
+%br
+
+= link_to 'New Dish', new_admin_dish_path

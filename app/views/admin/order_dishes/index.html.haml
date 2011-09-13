@@ -1,0 +1,17 @@
+%h1 Listing order_dishes
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @order_dishes.each do |order_dish|
+    %tr
+      %td= link_to 'Show', order_dish
+      %td= link_to 'Edit', edit_order_dish_path(order_dish)
+      %td= link_to 'Destroy', order_dish, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Order dish', new_order_dish_path

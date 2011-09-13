@@ -1,0 +1,2 @@
+class OrderDishesController < ApplicationController
+end

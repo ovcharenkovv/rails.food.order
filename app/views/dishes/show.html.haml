@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @dish.name
+%p
+  %b Description:
+  = @dish.description
+%p
+  %b Price:
+  = @dish.price
+%p
+  %b Weight:
+  = @dish.weight
+%p
+  %b Week day:
+  = @dish.week_day
+%p
+  %b Category:
+  = @dish.category_id
+
+= link_to 'Edit', edit_dish_path(@dish)
+\|
+= link_to 'Back', dishes_path

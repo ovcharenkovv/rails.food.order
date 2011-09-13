@@ -1,0 +1,31 @@
+= form_for [:admin, @dish ] do |f|
+  -if @dish.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@dish.errors.count, "error")} prohibited this dish from being saved:"
+      %ul
+        - @dish.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :description
+    = f.text_area :description
+  .field
+    = f.label :weight
+    = f.text_field :weight
+  .field
+    = f.label :price
+    = f.text_field :price
+  .field
+    = f.label :week_day
+    =# f.select :week_day, Dish::WEEK_DAYS, :prompt => 'chose'
+    = f.select(:week_day, Dish::WEEK_DAYS.collect {|d| [d, Dish::WEEK_DAYS.index(d)+1]})
+
+  .field
+    = f.label :category_id
+    = f.collection_select :category_id, Category.find(:all), :id, :name, :prompt => "chose"
+
+  .actions
+    = f.submit 'Save'
