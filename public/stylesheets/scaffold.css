@@ -112,9 +112,27 @@ table a:active{
 table tbody {
     border-bottom: 1px solid #000;
 }
+table .color_1 {
+    background-color: #ffe4e1;
+}
+table .color_2 {
+    background-color: #e6e6fa;
+}
+table .color_3 {
+    background-color: #faebd7;
+}
+
+table .color_4 {
+    background-color: #f0f0f0;
+}
+
+
+
+
 .aright {
     text-align:right !important;
 }
+
 
 .red {
     color: red !important;
@@ -140,7 +158,6 @@ table tbody {
     margin:  10px 0;
     padding: 10px;
     border: 1px solid gray;
-
 }
 
 

@@ -12,7 +12,7 @@
   -# dishes.each do |dish|
   = hidden_field_tag "order[dish_ids][]", ""
   - for dish in Dish.tomorrow_dishes
-    %tr
+    %tr{:class=>"color_#{dish.category.id}"}
       %td= check_box_tag "order[dish_ids][]", dish.id, @order.dishes.include?(dish)
       %td= dish.category.name
       %td= dish.name
