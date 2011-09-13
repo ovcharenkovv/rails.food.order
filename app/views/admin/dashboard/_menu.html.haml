@@ -6,3 +6,7 @@
   %li= link_to "Dishes", admin_dishes_path
   |
   %li= link_to "Orders", admin_orders_path
+  - if user_signed_in?
+    |
+    %li=link_to "Sign out", destroy_user_session_path , :method => :delete, :class=>'red'
+
