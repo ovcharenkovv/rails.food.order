@@ -15,6 +15,10 @@ class Admin::DishesController < Admin::AdminController
   def show
     @dish = Dish.find(params[:id])
 
+    @import_cells = @import_table.import_cells
+    @row_index_max = @import_cells.map { |cell| cell.row_index }.max
+    @column_index_max = @import_cells.map { |cell| cell.column_index }.max
+
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @dish }

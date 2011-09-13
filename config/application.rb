@@ -44,5 +44,7 @@ module Food
 #      g.test_framework :rspec, :fixture => true, :views => false
 #      g.fixture_replacement :factory_girl, :dir => "spec/factories"
     end
+    #config.action_view.javascript_expansions[:defaults] = %w(jquery rails)
+
   end
 end

@@ -3,10 +3,12 @@ Food::Application.routes.draw do
   devise_for :users
   resources :orders
 
-
   namespace :admin do
     devise_for :users
-    resources :dishes , :categories , :order_dishes ,:orders
+    resources :dishes , :categories , :order_dishes ,:orders ,:import_tables
+    get "csv/import"
+    post "csv/import" => 'csv#upload'
+    match 'import_tables/:id' => 'import_tables#merge'
   end
 
   match 'admin' => 'admin/dashboard#index', :as => :admin_dashboard
