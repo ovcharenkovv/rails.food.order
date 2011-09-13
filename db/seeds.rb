@@ -3,5 +3,6 @@
 #
 # Examples:
 #
-#   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
-#   Mayor.create(:name => 'Daley', :city => cities.first)
+#cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
+#Mayor.create(:name => 'Daley', :city => cities.first)
+categories = Category.create([{ :name => 'Премиум' }, { :name => 'Стандарт' }, { :name => 'Эконом' }, { :name => 'Дополнительно' }, { :name => 'Ежетневные' }])
