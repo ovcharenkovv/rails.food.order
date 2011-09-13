@@ -3,10 +3,10 @@ class Admin::DashboardController < Admin::AdminController
   def index
     @orders = Order.today_orders
     @count_order_dishes = OrderDish.count_order_dishes
-    #@grand_total=0
-    #@count_order_dishes.each do |c|
-    #  @grand_total += c.dish.price.to_i*c.cnt.to_i
-    #end
+    @grand_total=0
+    @count_order_dishes.each do |c|
+      @grand_total += c.dish.price.to_enum*c.cnt.to_enum
+    end
   end
 
 end
