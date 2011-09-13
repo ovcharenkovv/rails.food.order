@@ -5,7 +5,7 @@ class Admin::DashboardController < Admin::AdminController
     @count_order_dishes = OrderDish.count_order_dishes
     @grand_total=0
     @count_order_dishes.each do |c|
-      @grand_total += c.dish.price.to_enum*c.cnt.to_enum
+      @grand_total += c.dish.price.to_f*c.cnt.to_f
     end
   end
 

@@ -36,7 +36,7 @@
       %td= cod.dish.description
       %td= cod.cnt
       %td= cod.dish.price
-      %td.aright="#{cod.dish.price.to_enum*cod.cnt.to_enum} Грн."
+      %td.aright="#{cod.dish.price.to_f*cod.cnt.to_f} Грн."
   %tr
     %td
     %td
