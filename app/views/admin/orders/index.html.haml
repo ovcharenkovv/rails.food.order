@@ -10,7 +10,7 @@
     %tr
       %td=order.user.email
       %td
-        = link_to edit_order_path(order) do
+        = link_to edit_admin_order_path(order) do
           %span.green="#{order.dishes.sum('price')} Грн - "
           =order.created_at.strftime("%A %d %b" )
       %td
