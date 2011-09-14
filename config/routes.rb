@@ -13,7 +13,7 @@ Food::Application.routes.draw do
     devise_for :users
     resources :dishes , :categories , :order_dishes ,:orders ,:import_tables
     post 'import_tables/:id' => 'import_tables#merge'
-    get "csv/import"
+    get "csv/import", :as => :import_csv
     post "csv/import" => 'csv#upload'
   end
 
