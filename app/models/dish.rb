@@ -19,8 +19,6 @@ class Dish < ActiveRecord::Base
     where("week_day = ? OR week_day = ?", week_day, 6)
   end
 
-
-
   def self.tomorrow_dishes
     where("week_day = ? OR week_day = ?", Dish.next_work_day, 6)
   end

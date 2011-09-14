@@ -4,10 +4,10 @@ class OrderDish < ActiveRecord::Base
 
   def self.count_order_dishes
     find(:all,
-         :joins => "LEFT JOIN dishes on order_dishes.dish_id = dishes.id" ,
+         :joins => "LEFT JOIN dishes on order_dishes.dish_id = dishes.id LEFT JOIN orders on order_dishes.order_id = orders.id" ,
          :select => "dish_id, COUNT(*) AS cnt",
          :group =>"dishes.category_id, order_dishes.dish_id",
-         :conditions => ["DATE(order_dishes.created_at) = ?", Date.today],
+         :conditions => ["DATE(orders.created_at) = ?", Date.today],
          :order => "dishes.category_id"
     )
 
