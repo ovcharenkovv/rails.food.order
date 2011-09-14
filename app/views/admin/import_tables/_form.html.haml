@@ -1,4 +1,4 @@
-= form_for @import_table do |f|
+= form_for [:admin,@import_table] do |f|
   -if @import_table.errors.any?
     #error_explanation
       %h2= "#{pluralize(@import_table.errors.count, "error")} prohibited this import_table from being saved:"

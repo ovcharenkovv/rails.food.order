@@ -84,7 +84,7 @@ class Admin::ImportTablesController < Admin::AdminController
     @import_table.destroy
 
     respond_to do |format|
-      format.html { redirect_to(import_tables_url) }
+      format.html { redirect_to(admin_import_tables_url) }
       format.xml  { head :ok }
     end
   end
@@ -112,7 +112,10 @@ class Admin::ImportTablesController < Admin::AdminController
     # merged records.
     merge = params[:merge]
     merge_table = merge[:table]
-    klass = ActiveRecord::Base.const_get(ActiveRecord::Base.class_name(merge_table))
+#    klass = ActiveRecord::Base.const_get(ActiveRecord::Base.class_name(merge_table))
+
+    kl = merge_table.to_s.classify
+    klass = ActiveRecord::Base.const_get("#{kl}")
 
     # Determine which columns have been mapped. Ignore the rest. Intersect the
     # requested column names with actual column names. Perhaps we should abort
@@ -135,6 +138,6 @@ class Admin::ImportTablesController < Admin::AdminController
       end
       instance.save
     end
-    eval "redirect_to #{merge_table}_path"
+    eval "redirect_to admin_#{merge_table}_path"
   end
 end
