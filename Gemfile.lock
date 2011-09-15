@@ -37,7 +37,6 @@ GEM
       warden (~> 1.0.3)
     erubis (2.6.6)
       abstract (>= 1.0.0)
-    fastercsv (1.5.4)
     haml (3.1.2)
     haml-rails (0.3.4)
       actionpack (~> 3.0)
@@ -89,7 +88,6 @@ PLATFORMS
 
 DEPENDENCIES
   devise
-  fastercsv
   haml-rails
   jquery-rails (>= 1.0.12)
   rails (= 3.0.3)

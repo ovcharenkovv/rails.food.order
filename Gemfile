@@ -4,7 +4,6 @@ gem 'rails', '3.0.3'
 gem 'rake' , '0.8.7'
 gem 'haml-rails'
 gem 'devise'
-gem 'fastercsv'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
