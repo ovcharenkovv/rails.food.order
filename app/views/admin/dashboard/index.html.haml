@@ -12,10 +12,10 @@
     %tr
       %td= order.id
       %td= order.user.email
-      %td= order.created_at
+      %td= order.created_at.to_date
       %td.aright
         - order.dishes.each do |dish|
-          =dish.name+"(#{dish.price}) "
+          =dish.name+" #{dish.category.name.to_s[0..3]} (#{dish.price})"
         %span.green="sum: #{order.dishes.sum('price')} Грн."
 
 %h2 Report
