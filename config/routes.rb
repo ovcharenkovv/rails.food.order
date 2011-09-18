@@ -6,12 +6,18 @@ Food::Application.routes.draw do
   resources :people
 
 
-  devise_for :users
+  #devise_for :users
+
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  resources :users
+
   resources :orders
 
   namespace :admin do
     devise_for :users
     resources :dishes , :categories , :order_dishes ,:orders ,:import_tables
+
+    delete 'destroy_all_dises' => 'dishes#destroy_all'
     post 'import_tables/:id' => 'import_tables#merge'
     get "csv/import", :as => :import_csv
     post "csv/import" => 'csv#upload'

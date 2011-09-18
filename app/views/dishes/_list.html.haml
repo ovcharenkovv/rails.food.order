@@ -19,7 +19,7 @@
         %td= dish.weight
         %td= dish.price
   -else
-    - for dish in Dish.week_day_dishes(@order.created_at.wday+1)
+    - for dish in Dish.week_day_dishes(@order.created_at.wday!= 5 ? @order.created_at.wday+1 : 1)
       %tr{:class=>"color_#{dish.category.id}"}
         %td
           -if @order.created_at.wday == Time.now.wday

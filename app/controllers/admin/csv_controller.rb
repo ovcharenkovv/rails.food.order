@@ -1,4 +1,4 @@
-require 'fastercsv'
+require 'csv'
 
 class Admin::CsvController < Admin::AdminController
   def import
@@ -9,7 +9,7 @@ class Admin::CsvController < Admin::AdminController
     row_index = 0
 #    FasterCSV.parse(params[:upload][:csv]) do |cells|
     uploaded_file= params[:upload][:csv].read
-    FasterCSV.parse(uploaded_file) do |cells|
+    CSV.parse(uploaded_file) do |cells|
       column_index = 0
       cells.each do |cell|
         table.import_cells.build :column_index => column_index, :row_index => row_index, :contents => cell

@@ -4,7 +4,9 @@ gem 'rails', '3.0.3'
 gem 'rake' , '0.8.7'
 gem 'haml-rails'
 gem 'devise'
-gem 'fastercsv'
+gem 'oa-oauth', :require => 'omniauth/oauth'
+gem 'oa-openid', :require => 'omniauth/openid'
+
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
