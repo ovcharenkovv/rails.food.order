@@ -16,7 +16,7 @@ class Dish < ActiveRecord::Base
 
 
   def self.week_day_dishes week_day
-    where("week_day = ? OR week_day = ?", week_day, 6)
+    where("week_day = ? OR week_day = ?", week_day, 6).order(:category_id)
   end
 
   def self.tomorrow_dishes
