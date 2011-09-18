@@ -84,4 +84,18 @@ class Admin::DishesController < Admin::AdminController
       format.xml  { head :ok }
     end
   end
+
+  def destroy_all
+    @all_dish = Dish.all
+    @all_dish.each do |all_dish|
+      all_dish.destroy
+    end
+
+    respond_to do |format|
+      format.html { redirect_to(admin_dishes_url) }
+      format.xml  { head :ok }
+    end
+  end
+
+
 end
