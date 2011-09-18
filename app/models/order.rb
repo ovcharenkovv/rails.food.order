@@ -20,8 +20,11 @@ class Order < ActiveRecord::Base
     end
   end
 
-  def self.today_orders
-    where('DATE(created_at) = ?', Date.today)
+  def self.orders_by_date date
+    where('DATE(created_at) = ?', date)
+  end
+  def self.previous_order_grouped
+    group("date(created_at)")
   end
 end
 

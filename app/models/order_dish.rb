@@ -2,12 +2,12 @@ class OrderDish < ActiveRecord::Base
   belongs_to :order
   belongs_to :dish
 
-  def self.count_order_dishes
+  def self.orders_dishes_width_count date
     find(:all,
          :joins => "LEFT JOIN dishes on order_dishes.dish_id = dishes.id LEFT JOIN orders on order_dishes.order_id = orders.id" ,
          :select => "dish_id, COUNT(*) AS cnt",
          :group =>"dishes.category_id, order_dishes.dish_id",
-         :conditions => ["DATE(orders.created_at) = ?", Date.today],
+         :conditions => ["DATE(orders.created_at) = ?", date],
          :order => "dishes.category_id"
     )
 

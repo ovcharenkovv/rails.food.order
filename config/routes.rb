@@ -18,6 +18,7 @@ Food::Application.routes.draw do
   end
 
   match 'admin' => 'admin/dashboard#index', :as => :admin_dashboard
+  match 'admin/dashboard/:date' => 'admin/dashboard#show', :as => :admin_dashboard_show
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

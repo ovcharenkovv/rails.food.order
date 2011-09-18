@@ -1,5 +1,7 @@
 %h1 Тел: 56-60-26,  Адрес: Шевченка 396 к180
-%h2 Today orders
+%br
+
+%h2="Order by #{params[:date]}"
 %table
   %thead
     %tr
@@ -18,7 +20,7 @@
           =dish.name+"(#{dish.price}) "
         %span.green="sum: #{order.dishes.sum('price')} Грн."
 
-%h2 Report
+%h2="Report by #{params[:date]}"
 
 %table
   %thead
@@ -45,9 +47,3 @@
     %td
     %td
     %td.green="SUM: #{@grand_total} ГРН."
-
-%h2 Previous reports
-%ul
-  - @previous_order.each do |po|
-    %li=link_to po.created_at.to_date , admin_dashboard_show_path(:date => po.created_at.to_date)
-
