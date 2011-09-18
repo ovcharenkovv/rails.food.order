@@ -16,14 +16,10 @@
         ="|"
         = link_to 'Destroy', order, :confirm => 'Are you sure?', :method => :delete, :class=>'red'
 
-.hidden{:style=>"display:none;"}
-  ="Order: #{@orders.last.created_at.to_date}"
-  ="Today: #{Date.today}"
 
 %br
--if @orders.last.nil? || @orders.last.created_at.to_date != Date.today
-  = link_to 'New Order', new_order_path
-
--#-if @orders.nil? ||
--#  -if @orders.last.created_at.to_date != Date.today
--#    = link_to 'New Order', new_order_path
+  -if @orders.last.nil?
+    = link_to 'New Order', new_order_path
+  -else
+    = link_to 'New Order', new_order_path unless @orders.last.created_at.to_date == Date.today
+    .hidden{:style=>"display:none;"}="Order: #{@orders.last.created_at.to_date} Today: #{Date.today}"
