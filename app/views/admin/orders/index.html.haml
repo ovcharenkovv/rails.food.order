@@ -15,8 +15,3 @@
           =order.created_at.strftime("%A %d %b" )
       %td
         = link_to 'Destroy', admin_order_path(order), :confirm => 'Are you sure?', :method => :delete, :class=>'red'
-
-%br
-
-= link_to 'New Order', new_admin_order_path
-
