@@ -28,7 +28,7 @@ class Order < ActiveRecord::Base
     #     :select => "orders.created_at",
     #     :group =>"date(orders.created_at)"
     #)
-    select(:created_at).group("date(created_at)")
+    select("orders.created_at").group("date(orders.created_at)")
   end
 end
 
