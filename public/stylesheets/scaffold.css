@@ -126,8 +126,8 @@ table .color_4 {
     background-color: #f0f0f0;
 }
 
-.dis[checked] {
-    opacity: 0;
+.today_created_false .checked_false {
+    display: none;
 }
 
 

@@ -23,9 +23,11 @@ class Order < ActiveRecord::Base
   def self.orders_by_date date
     where('DATE(created_at) = ?', date)
   end
+
   def self.previous_order_grouped
     find(:all, :select => 'distinct date(created_at) as date').map(&:date)
   end
+
 end
 
 

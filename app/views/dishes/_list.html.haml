@@ -1,4 +1,4 @@
-%table
+%table{:class=>"today_created_#{is_today_created @order}"}
   %thead
     %tr
       %th Check
@@ -20,7 +20,7 @@
         %td= dish.price
   -else
     - for dish in Dish.week_day_dishes(@order.created_at.wday!= 5 ? @order.created_at.wday+1 : 1)
-      %tr{:class=>"color_#{dish.category.id}"}
+      %tr{:class=>"color_#{dish.category.id} checked_#{@order.dishes.include?(dish)}"}
         %td
           -if @order.created_at.wday == Time.now.wday
             = check_box_tag "order[dish_ids][]", dish.id, @order.dishes.include?(dish)
