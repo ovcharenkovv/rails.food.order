@@ -24,17 +24,7 @@ class Order < ActiveRecord::Base
     where('DATE(created_at) = ?', date)
   end
   def self.previous_order_grouped
-    find(:all,
-         :select => "DISTINCT created_at"
-    )
-
-    #select("DISTINCT date(created_at)")
-    #find(:all,
-    #     :select => "dish_id, COUNT(*) AS cnt",
-    #     :conditions => ["DATE(orders.created_at) = ?", date],
-    #)
-
-    #group("date(created_at)")
+    find(:all, :select => 'distinct date(created_at) as date').map(&:date)
   end
 end
 

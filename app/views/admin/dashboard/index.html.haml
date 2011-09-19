@@ -49,5 +49,5 @@
 %h2 Previous reports
 %ul
   - @previous_order.each do |po|
-    %li=link_to po.created_at.to_date , admin_dashboard_show_path(:date => po.created_at.to_date)
+    %li=link_to po , admin_dashboard_show_path(:date => po)
 
