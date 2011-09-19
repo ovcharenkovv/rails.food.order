@@ -24,12 +24,11 @@ class Order < ActiveRecord::Base
     where('DATE(created_at) = ?', date)
   end
   def self.previous_order_grouped
-    find(:all,
-        :select => "orders.created_at",
-         :group =>"date(orders.created_at)"
-    )
-
-    #group("date(created_at)")
+    #find(:all,
+    #     :select => "orders.created_at",
+    #     :group =>"date(orders.created_at)"
+    #)
+    select(:created_at).group("date(created_at)")
   end
 end
 
