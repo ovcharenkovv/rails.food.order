@@ -1,4 +1,4 @@
-%table{:class=>"today_created_#{is_today_created @order}"}
+%table{:class=>"today_created_#{is_today_created @order unless params[:action] == 'new'}"}
   %thead
     %tr
       %th Check
