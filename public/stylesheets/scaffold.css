@@ -162,4 +162,18 @@ table .color_4 {
     border: 1px solid gray;
 }
 
+.home_icon {
+    display: block;
+    background-image: url("../images/home-icon.jpg");
+    width: 21px;
+    height: 19px;
+    text-indent: -10000px;
+    overflow: hidden;
+    float: left;
+    margin: 0 10px 0 0;
+}
+.home_icon:hover {
+    opacity: 0.5;
+}
+
 

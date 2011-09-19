@@ -1,8 +1,12 @@
-
 #user_nav
+  =link_to 'home', root_path, :class=>"home_icon"
   - if user_signed_in?
-    Signed in as #{current_user.email}. Not you?
+    |
+    \#{link_to "Profile", profiles_path}
+    |
     \#{link_to "Logout", destroy_user_session_path , :method => :delete}
+    |
+    Signed in as #{current_user.email}
   - else
     = link_to "Join", new_user_registration_path
     or
