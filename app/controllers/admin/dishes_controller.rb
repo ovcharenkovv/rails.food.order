@@ -2,7 +2,7 @@ class Admin::DishesController < Admin::AdminController
   # GET /dishes
   # GET /dishes.xml
   def index
-    @dishes = Dish.all
+    @dishes = Dish.includes(:category).order("week_day").order("category_id").all
 
     respond_to do |format|
       format.html # index.html.erb
