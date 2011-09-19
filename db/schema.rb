@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110913200531) do
+ActiveRecord::Schema.define(:version => 20110919135601) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -42,6 +42,14 @@ ActiveRecord::Schema.define(:version => 20110913200531) do
 
   create_table "import_tables", :force => true do |t|
     t.string   "original_path"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "locations", :force => true do |t|
+    t.string   "name"
+    t.string   "address"
+    t.string   "phone"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
