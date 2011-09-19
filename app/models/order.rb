@@ -25,7 +25,7 @@ class Order < ActiveRecord::Base
   end
   def self.previous_order_grouped
     find(:all,
-         :select => "id, user_id, created_at",
+        :select => "orders.created_at",
          :group =>"date(created_at)"
     )
 
