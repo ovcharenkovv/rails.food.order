@@ -142,38 +142,52 @@ table .color_4 {
 .green {
     color: green;
 }
-.admin_menu {
-    border: 1px solid gray;
-    padding: 10px;
+.menu {
+    background: url("../images/gradient.jpg") repeat-x scroll 0 0 transparent;
+    border: 1px solid #808080;
+    height: 40px;
+    overflow: hidden;
+
 }
-.admin_menu ul {
+.menu ul {
     margin: 0;
     padding: 0;
 
 }
-.admin_menu ul li {
-    display:  inline-block;
-    margin: 0 10px;
+.menu ul li {
+    display:  block;
+    float:left;
+}
+.menu ul li a {
+    border-right: 1px solid #808080;
+    display: block;
+    height: 24px;
+    padding: 10px 15px 6px;
+}
+.menu ul li .last {
+    display: block;
+    height: 24px;
+    padding: 10px 15px 6px;
+}
+.menu ul li a:hover {
+    opacity: 0.4;
 }
 
-.admin_wrapper {
+.admin_wrapper, .wrapper {
     margin:  10px 0;
     padding: 10px;
     border: 1px solid gray;
 }
 
 .home_icon {
+    background: url("../images/home-icon.jpg") no-repeat scroll 15px 10px transparent;
     display: block;
-    background-image: url("../images/home-icon.jpg");
-    width: 21px;
-    height: 19px;
     text-indent: -10000px;
-    overflow: hidden;
-    float: left;
-    margin: 0 10px 0 0;
+    width: 18px;
 }
-.home_icon:hover {
-    opacity: 0.5;
+.google_icon {
+    background: url("../images/google_icon.png") no-repeat scroll 10px 9px transparent;
+    padding-left: 42px !important;
 }
 
 

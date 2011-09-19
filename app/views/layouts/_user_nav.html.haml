@@ -1,17 +1,13 @@
-#user_nav
-  =link_to 'home', root_path, :class=>"home_icon"
+%ul
+  %li=link_to 'home', root_path, :class=>"home_icon"
   - if user_signed_in?
-    |
-    \#{link_to "Profile", profiles_path}
-    |
-    \#{link_to "Logout", destroy_user_session_path , :method => :delete}
-    |
-    Signed in as #{current_user.email}
+    -#%li= link_to "Profile", profiles_path
+    %li= link_to "Logout", destroy_user_session_path , :method => :delete
+    %li
+      .last="Signed in as #{current_user.email}"
   - else
-    = link_to "Join", new_user_registration_path
-    or
-    \#{link_to "Login", new_user_session_path}
-    or
-    \#{link_to "Login with Google", user_omniauth_authorize_path(:open_id, :openid_url => "https://www.google.com/accounts/o8/id"), :class=>"red"}
+    %li= link_to "Join", new_user_registration_path
+    %li= link_to "Login", new_user_session_path
+    %li= link_to "Login with Google", user_omniauth_authorize_path(:open_id, :openid_url => "https://www.google.com/accounts/o8/id"), :class=>"google_icon"
     -#or
-    -#\#{link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook)}
+    -#%li= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook)
